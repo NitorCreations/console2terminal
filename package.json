@@ -7,7 +7,8 @@
   "browser": "browser.js",
   "dependencies": {
     "better-console": "0.2.4",
-    "nodejs-websocket": "1.7.0"
+    "nodejs-websocket": "1.7.0",
+    "stringify-object": "2.4.0"
   },
   "bin": "./index.js",
   "scripts": {},
