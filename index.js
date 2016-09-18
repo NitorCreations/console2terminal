@@ -11,9 +11,8 @@ var conf = {inlineCharacterLimit: 1000000000};
 ws.createServer(function (conn) {
   conn.on("text", function (msg) {
     msg = JSON.parse(msg);
-    var str = stringifyObject(msg.args, conf);
-    str = str.substring(1, str.length - 1);
-    console[msg.level].call(console, str);
+    if(!console[msg.level]) console.error(msg)
+    else console[msg.level].apply(console, msg.args.map(function(arg){return stringifyObject(arg, conf)}));
   });
   conn.on("close", function (code, reason) {
     console.log("---------------------------------");
