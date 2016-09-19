@@ -1,6 +1,6 @@
 # console2terminal
 
-/Stream browser console logging to terminal using websockets./
+*Stream browser console logging to terminal using websockets.*
 
 * [on npmjs.com](https://www.npmjs.com/package/console2terminal)
 
