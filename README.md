@@ -26,6 +26,10 @@ For convenience, add the .bin directory to your PATH environment variable and ge
 
 The server will output all the messages on stdout.
 
+Navigating between/reloading pages will temporarily disconnect the websocket, which is indicated by an extra separator line on stdout like this, which helps to keep track of page loads.
+
+    ---------------------------------
+
 # Configuration
 
 If you want to tune the configuration on the client side:
