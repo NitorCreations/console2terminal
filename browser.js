@@ -4,6 +4,11 @@ var origConsole = window.console;
 
 var connected = false;
 var queue = [];
+var opts = {};
+
+function config(newOpts) {
+  opts = newOpts || {};
+}
 
 var socket = new WebSocket("ws://localhost:19375/");
 socket.onopen = function socketOpen() {
@@ -26,12 +31,13 @@ function send(level, args) {
 }
 
 const console = {
-  log:   function () { origConsole.log  .apply(origConsole, arguments); send("log",   arguments); },
-  error: function () { origConsole.error.apply(origConsole, arguments); send("error", arguments); },
-  warn:  function () { origConsole.warn. apply(origConsole, arguments); send("warn",  arguments); },
-  info:  function () { origConsole.info .apply(origConsole, arguments); send("info",  arguments); },
-  debug: function () { origConsole.debug.apply(origConsole, arguments); send("debug", arguments); },
-  trace: function () { origConsole.trace.apply(origConsole, arguments); send("trace", arguments); }
+  log:   function () { if (!opts.silentBrowser) origConsole.log  .apply(origConsole, arguments); send("log",   arguments); },
+  error: function () { if (!opts.silentBrowser) origConsole.error.apply(origConsole, arguments); send("error", arguments); },
+  warn:  function () { if (!opts.silentBrowser) origConsole.warn. apply(origConsole, arguments); send("warn",  arguments); },
+  info:  function () { if (!opts.silentBrowser) origConsole.info .apply(origConsole, arguments); send("info",  arguments); },
+  debug: function () { if (!opts.silentBrowser) origConsole.debug.apply(origConsole, arguments); send("debug", arguments); },
+  trace: function () { if (!opts.silentBrowser) origConsole.trace.apply(origConsole, arguments); send("trace", arguments); }
 };
 
-module.exports = window.console = console;
+window.console = console;
+module.exports = config;
