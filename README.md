@@ -12,7 +12,7 @@ or in ES6:
 
     import "console2terminal";
 
-After this all console log messages will also be sent to any listening server.
+After this all console log messages will also be sent to a listening server on localhost.
 
 To run the server, run:
 
