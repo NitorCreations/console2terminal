@@ -1,7 +1,7 @@
 {
   "name": "console2terminal",
   "private": false,
-  "version": "2.0.0",
+  "version": "0.1.0",
   "description": "Stream console logging to terminal using websocket",
   "main": "index.js",
   "browser": "browser.js",
@@ -10,8 +10,26 @@
     "nodejs-websocket": "1.7.0",
     "stringify-object": "2.4.0"
   },
-  "bin": "./index.js",
+  "bin": {
+    "console2terminal": "./index.js"
+  },
   "scripts": {},
   "author": "Jonas Berlin / Nitor Creations",
-  "license": "Apache2"
+  "license": "Apache-2.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NitorCreations/console2terminal.git"
+  },
+  "keywords": [
+    "browser",
+    "console",
+    "terminal",
+    "websocket",
+    "remote"
+  ],
+  "bugs": {
+    "url": "https://github.com/NitorCreations/console2terminal/issues"
+  },
+  "homepage": "https://github.com/NitorCreations/console2terminal#readme"
 }
