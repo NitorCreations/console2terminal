@@ -22,6 +22,8 @@ or in Windows:
 
     node_modules\.bin\console2terminal
 
+For convenience, add the .bin directory to your PATH environment variable and get by with just `console2terminal`.
+
 The server will output all the messages on stdout.
 
 # Configuration
