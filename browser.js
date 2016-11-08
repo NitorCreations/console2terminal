@@ -1,5 +1,7 @@
 'use strict';
 
+var common = require("./common");
+
 var origConsole = window.console;
 
 var connected = false;
@@ -22,6 +24,8 @@ function send(level, args) {
   const msg = JSON.stringify({
     level: level,
     args: Array.prototype.slice.call(args, 0)
+  }, function(k,v) {
+    return v === undefined ? common.placeholders.undef : v;
   });
   if (connected) {
     socket.send(msg);
