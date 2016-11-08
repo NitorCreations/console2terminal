@@ -1,7 +1,7 @@
 {
   "name": "console2terminal",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Stream console logging to terminal using websocket",
   "main": "index.js",
   "browser": "browser.js",
