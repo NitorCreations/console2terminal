@@ -46,6 +46,16 @@ or in ES6:
 
 * `silentBrowser` set to true to omit console log messages in the browser. This can improve performance noticeably.
 
+# Release history
+
+* 0.1.0 - initial release
+* 0.2.0 - add support for "undefined" values
+
+# Not supported
+
+* functions
+* symbols (ES6)
+
 # License
 
 [Apache-2.0](LICENSE)
